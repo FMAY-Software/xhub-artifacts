@@ -1,0 +1,26 @@
+{
+  "name": "xhub-artifacts",
+  "about": "Service providing all shared artifacts on the xtUML Hub",
+  "description": "This service is the access point for artifacts supporting all clients.",
+  "email": "travis.london@gmail.com",
+  "repository_name": "xhub-artifacts",
+  "home": "https://github.com/FMAY-Software/xhub-artifacts",
+  "deliverables": [
+    {
+      "target": "None",
+      "url": "None"
+    }
+  ],
+  "demonstration": {
+    "url": ""
+  },
+  "owner": {
+    "first_name": "FMAY-Incubator",
+    "last_name": "",
+    "email": "travis.london@fmay.net",
+    "phone": "5203730727"
+  },
+  "clients": [
+    "travis.london@gmail.com"
+  ]
+}
