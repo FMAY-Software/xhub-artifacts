@@ -1,0 +1,12 @@
+{
+  "name": "xhub-artifacts",
+  "version": "1.0.0",
+  "description": "A service providing access to all xtuml hub artifacts",
+  "repository": "git@github.com:FMAY-Software/xhub-artifacts.git",
+  "author": "Travis London <travis.london@fmay.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.2"
+  }
+}

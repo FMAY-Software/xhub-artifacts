@@ -1,0 +1,55 @@
+service: xhub-services
+frameworkVersion: "3"
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: python3.10
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:PutItem
+      Resource: "arn:aws:dynamodb:us-east-1:591565028697:table/xhub-artifacts"
+
+functions:
+  get-artifacts:
+    handler: src.xhub.get_artifacts.handler
+    events:
+      - http:
+          path: /artifacts
+          method: get
+          cors: true
+  get-upload-signed-url:
+    handler: src.xhub.get_upload_signed_urls.handler
+    role: arn:aws:iam::591565028697:role/xhub-data
+    events:
+      - http:
+          path: /artifacts/upload/urls
+          method: get
+          cors: true
+  get-download-signed-url:
+    handler: src.xhub.get_download_signed_urls.handler
+    role: arn:aws:iam::591565028697:role/xhub-data
+    events:
+      - http:
+          path: /artifacts/download/urls
+          method: get
+          cors: true
+  write-artifacts:
+    handler: src.xhub.write_artifacts.handler
+    events:
+      - http:
+          path: /artifacts/write
+          method: post
+          cors: true
+  update-artifacts:
+    handler: src.xhub.update_artifacts.handler
+    events:
+      - http:
+          path: /artifacts/update
+          method: post
+          cors: true
+plugins:
+  - serverless-offline
